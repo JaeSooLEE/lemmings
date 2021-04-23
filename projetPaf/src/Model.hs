@@ -11,7 +11,7 @@ data GameState = GameState { persoX :: Int
                            , speed :: Int }
   deriving (Show)
 
-
+  
 initGameState :: GameState
 initGameState = GameState 200 300 4
 
