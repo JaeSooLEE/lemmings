@@ -1,2 +1,15 @@
+import CoordinatesSpec
+import NiveauSpec
+import GameStateSpec
+import Test.Hspec
+import Moteur
+import Niveau
+
+
+
 main :: IO ()
-main = putStrLn "Test suite not yet implemented"
+main = hspec $ do
+  coordSpec0
+  coordSpec1
+  niveauSpec
+  gameStateSpec

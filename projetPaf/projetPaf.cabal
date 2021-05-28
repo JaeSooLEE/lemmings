@@ -25,9 +25,12 @@ source-repository head
 
 library
   exposed-modules:
+      Coordinates
       Keyboard
-      Model
+      Lemmings
+      Moteur
       Mouse
+      Niveau
       Sprite
       SpriteMap
       TextureMap
@@ -36,8 +39,10 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , containers
+    , hspec
     , linear
     , random
     , sdl2
@@ -51,8 +56,10 @@ executable projetPaf-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , containers
+    , hspec
     , linear
     , projetPaf
     , random
@@ -63,13 +70,19 @@ test-suite projetPaf-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      CoordinatesSpec
+      GameStateSpec
+      LemmingSpec
+      NiveauSpec
       Paths_projetPaf
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
     , containers
+    , hspec
     , linear
     , projetPaf
     , random
